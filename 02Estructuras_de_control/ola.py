@@ -1,10 +1,12 @@
-rows = int(input("cuantas filas quieres?"))
-cols = 1
+filas = int(input("cuantas filas quieres?"))
+columnas = 1
+contador = filas
 
-
-
-for i in range(1,rows+1):
-    for j in range(0,cols):
+for i in range(1, filas+1):
+    for j in range(0, contador):
+        print(" ", end="")
+    for n in range (0, columnas):
         print("*", end="")
-    cols += 2
+    columnas += 2
+    contador -= 1
     print("\n", end="")
