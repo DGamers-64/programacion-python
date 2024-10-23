@@ -7,27 +7,27 @@ def comprobar(p1, p2):
         case "tijeras":
             match p2:
                 case "tijeras":
-                    resultado = "Has empatado"
+                    resultado = "tie"
                 case "piedra":
-                    resultado = "Ha ganado la CPU"
+                    resultado = "cpu"
                 case "papel":
-                    resultado = "Ha ganado el jugador 1"
+                    resultado = "p1"
         case "piedra":
             match p2:
                 case "tijeras":
-                    resultado = "Ha ganado el jugador 1"
+                    resultado = "p1"
                 case "piedra":
-                    resultado = "Has empatado"
+                    resultado = "tie"
                 case "papel":
-                    resultado = "Ha ganado la CPU"
+                    resultado = "cpu"
         case "papel":
             match p2:
                 case "tijeras":
-                    resultado = "Ha ganado la CPU"
+                    resultado = "cpu"
                 case "piedra":
-                    resultado = "Ha ganado el jugador 1"
+                    resultado = "p1"
                 case "papel":
-                    resultado = "Has empatado"
+                    resultado = "tie"
         case _:
             resultado = "El jugador 1 ha introducido un dato erróneo"
     return resultado
@@ -42,10 +42,15 @@ def juego():
             p2 = "Piedra"
         case 3:
             p2 = "Papel"
-    print("CPU:      ", p2)
-    print()
-    print(comprobar(p1, p2))
-    print()
+    print("CPU:      ", p2, "\n")
+    resultado = comprobar(p1, p2)
+    match (resultado):
+        case 'p1':
+            print("Has ganado", "\n")
+        case 'cpu':
+            print("Ha ganado la CPU", "\n")
+        case 'tie':
+            print("Has empatado", "\n")
     jugar = input("¿Quieres seguir jugando? (s/n) ")
     print()
     return jugar
