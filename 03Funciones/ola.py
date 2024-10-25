@@ -1,17 +1,12 @@
-def recortarDecimales(num, decimales):
-    num = str(num)
-    numNuevo = ''
-    esDecimal = False
-    for i in num:
-        numNuevo += i
-        if (i == '.'):
-            esDecimal = True
-            continue
-        
-        if (esDecimal):
-            decimales -= 1
-            if(decimales == 0):
-                break
-    return numNuevo
-
-print(recortarDecimales(3.143281, 3))
+def esBisiesto(año):
+    if (año % 4 != 0 or año % 400 != 0 and año % 100 == 0):
+        return False
+    else:
+        return True
+    
+añoMin = int(input("dime un año"))
+añoMax = int(input("dime otro año mayor a este"))
+if(añoMin > añoMax):
+    print("años invalidos")
+    exit()
+print("hola")
